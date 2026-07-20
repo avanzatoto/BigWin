@@ -80,7 +80,6 @@
             --gold-dark: #735522;
             --gold-gradient: linear-gradient(135deg, #fff6de 0%, #ffcc5c 50%, #8a6f3e 100%);
             --bg-dark: #050507;
-            --glass-card: rgba(10, 10, 14, 0.45);
         }
 
         html {
@@ -115,7 +114,7 @@
             content: '';
             position: fixed; 
             top: 0; left: 0; width: 100vw; height: 100vh;
-            background: radial-gradient(circle at center, rgba(6, 6, 8, 0.15) 0%, rgba(3, 3, 5, 0.8) 100%);
+            background: radial-gradient(circle at center, rgba(6, 6, 8, 0.15) 0%, rgba(3, 3, 5, 0.85) 100%);
             z-index: 1;
             pointer-events: none;
         }
@@ -128,54 +127,34 @@
             padding: 10px 0;
         }
 
-        /* BINGKAI LINTASAN KILAT EMAS (BORDER STROKE RUNNER - NON ROTATING) */
+        /* BINGKAI EMAS ELEGAN DENGAN EFEK KILAU / PULSE GOLD DILUAR */
         .premium-wrapper {
             width: 100%;
             max-width: 520px;
-            background: var(--glass-card);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
+            background: linear-gradient(145deg, rgba(16, 16, 22, 0.95) 0%, rgba(8, 8, 12, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-radius: 24px;
             padding: 40px 30px; 
             position: relative;
             text-align: center;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9),
-                        0 0 30px rgba(255, 204, 92, 0.2);
-            /* Memakai border transparan untuk tempat lintasan gradient */
-            border: 2px solid transparent;
-            background-clip: padding-box;
+            border: 2px solid var(--gold-neon);
+            animation: goldBorderGlow 2s infinite alternate ease-in-out;
         }
 
-        /* EFEK CAHAYA EMAS BERGERAK MENYUSURI GARIS PINGGIRAN (BORDER GLOW RUNNER) */
-        .premium-wrapper::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: 24px;
-            padding: 2px; /* Ketebalan garis bingkai */
-            background: linear-gradient(
-                90deg, 
-                rgba(255,204,92,0) 0%, 
-                #ffcc5c 25%, 
-                #fff6de 50%, 
-                #ffcc5c 75%, 
-                rgba(255,204,92,0) 100%
-            );
-            background-size: 200% 200%;
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            animation: borderLinearGlow 1s linear infinite;
-            pointer-events: none;
-            z-index: 3;
-        }
-
-        @keyframes borderLinearGlow {
+        /* ANIMASI EFEK CAHAYA GOLD BERGERAK PADA BINGKAI PINGGIRAN */
+        @keyframes goldBorderGlow {
             0% {
-                background-position: 0% 0%;
+                border-color: rgba(255, 204, 92, 0.4);
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9),
+                            0 0 15px rgba(255, 204, 92, 0.2),
+                            inset 0 0 15px rgba(255, 204, 92, 0.05);
             }
             100% {
-                background-position: 200% 200%;
+                border-color: rgba(255, 246, 222, 0.9);
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95),
+                            0 0 35px rgba(255, 204, 92, 0.6),
+                            inset 0 0 25px rgba(255, 204, 92, 0.15);
             }
         }
 
@@ -185,8 +164,8 @@
             margin: 0 auto 30px auto;
             border-radius: 16px; 
             overflow: hidden;
-            border: 1px solid rgba(255, 204, 92, 0.35);
-            box-shadow: 0 0 20px rgba(255, 204, 92, 0.15);
+            border: 1px solid rgba(255, 204, 92, 0.4);
+            box-shadow: 0 0 20px rgba(255, 204, 92, 0.2);
             background: #000;
         }
 
