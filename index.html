@@ -80,7 +80,6 @@
             --gold-dark: #735522;
             --gold-gradient: linear-gradient(135deg, #fff6de 0%, #ffcc5c 50%, #8a6f3e 100%);
             --bg-dark: #050507;
-            /* DIUBAH: Dibuat lebih transparan dari 0.85 menjadi 0.45 */
             --glass-card: rgba(10, 10, 14, 0.45);
         }
 
@@ -112,7 +111,6 @@
             background: transparent;
         }
 
-        /* Overlay Gelap Sinematik: Diturunkan opasitasnya agar background-besar lebih menyala */
         body::before {
             content: '';
             position: fixed; 
@@ -130,12 +128,12 @@
             padding: 10px 0;
         }
 
-        /* BINGKAI NEON MEWAH BERGERAK (ANGULAR BORDER GLOW) */
+        /* BINGKAI NEON MEWAH BERGERAK */
         .premium-wrapper {
             width: 100%;
             max-width: 520px;
             background: var(--glass-card);
-            backdrop-filter: blur(30px); /* DIUBAH: Ditambah efek blur agar teks tetap tajam */
+            backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
             border-radius: 24px;
             padding: 40px 30px; 
@@ -146,26 +144,27 @@
                         0 0 30px rgba(255, 204, 92, 0.05);
         }
 
-        /* KECEPATAN TETAP TINGGI (2s) */
+        /* PERBAIKAN: Elemen diperbesar (300%) dan titik pusat ditarik menjauh agar rotasi gradien mengalir super halus tanpa patahan kaku di tengah */
         .premium-wrapper::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
             background: conic-gradient(
-                transparent, 
-                rgba(255, 204, 92, 0.1), 
-                var(--gold-neon), 
-                rgba(255, 204, 92, 0.1), 
-                transparent 60%
+                from 0deg at 50% 50%,
+                transparent 0%, 
+                rgba(255, 204, 92, 0.05) 25%, 
+                var(--gold-neon) 50%, 
+                rgba(255, 204, 92, 0.05) 75%, 
+                transparent 100%
             );
             animation: rotateNeonBorder 2s linear infinite;
             z-index: -2;
+            transform-origin: center center;
         }
 
-        /* DIUBAH: Lapisan background dalam diturunkan kegelapannya menjadi transparan */
         .premium-wrapper::after {
             content: '';
             position: absolute;
@@ -176,6 +175,7 @@
         }
 
         @keyframes rotateNeonBorder {
+            0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
 
@@ -203,7 +203,7 @@
             transform: scale(1.03);
         }
 
-        /* EFEK NEON BERGERAK JELAS DI DALAM HURUF */
+        /* EFEK NEON HURUF */
         .logo-section h1 {
             font-family: 'Cinzel', serif;
             font-size: 38px;
@@ -294,7 +294,6 @@
 
         /* LINK ALTERNATIF PANEL */
         .alternatif-panel {
-            /* DIUBAH: Dibuat transparan melunnak dari 0.7 ke 0.4 */
             background: rgba(5, 5, 7, 0.4);
             border: 1px solid rgba(255, 204, 92, 0.15);
             border-radius: 16px;
@@ -527,12 +526,12 @@
                 <div class="tagline">Play Smart • Win Big • Stay Premium</div>
             </div>
 
-            <!-- Tombol Utama Akses -->
+            <!-- Tombol Utama Akses (DIUBAH: Mengalir di tab yang sama tanpa target_blank) -->
             <div class="auth-grid">
-                <a href="https://website-tujuan-anda.com/login" class="btn btn-login" target="_blank" rel="noopener">
+                <a href="https://website-tujuan-anda.com/login" class="btn btn-login">
                     <i class="fa-solid fa-right-to-bracket"></i> LOGIN
                 </a>
-                <a href="https://website-tujuan-anda.com/daftar" class="btn btn-daftar" target="_blank" rel="noopener">
+                <a href="https://website-tujuan-anda.com/daftar" class="btn btn-daftar">
                     <i class="fa-solid fa-user-plus"></i> DAFTAR
                 </a>
             </div>
@@ -542,26 +541,26 @@
                 <h2 class="panel-label">Link Alternatif Resmi</h2>
                 
                 <div class="links-grid">
-                    <a href="https://website-tujuan-anda.com/link1" class="link-item" target="_blank" rel="noopener">
+                    <a href="https://website-tujuan-anda.com/link1" class="link-item">
                         <i class="fa-solid fa-link"></i>
                         <span>Link Alternatif 1</span>
                     </a>
-                    <a href="https://website-tujuan-anda.com/link2" class="link-item" target="_blank" rel="noopener">
+                    <a href="https://website-tujuan-anda.com/link2" class="link-item">
                         <i class="fa-solid fa-link"></i>
                         <span>Link Alternatif 2</span>
                     </a>
-                    <a href="https://website-tujuan-anda.com/link3" class="link-item" target="_blank" rel="noopener">
+                    <a href="https://website-tujuan-anda.com/link3" class="link-item">
                         <i class="fa-solid fa-link"></i>
                         <span>Link Alternatif 3</span>
                     </a>
-                    <a href="https://website-tujuan-anda.com/link4" class="link-item" target="_blank" rel="noopener">
+                    <a href="https://website-tujuan-anda.com/link4" class="link-item">
                         <i class="fa-solid fa-link"></i>
                         <span>Link Alternatif 4</span>
                     </a>
                 </div>
 
                 <div class="livechat-container-center">
-                    <a href="https://website-tujuan-anda.com/livechat" class="capsule-live-support" target="_blank" rel="noopener">
+                    <a href="https://website-tujuan-anda.com/livechat" class="capsule-live-support">
                         <div class="capsule-icon">
                             <i class="fa-headset fa-solid"></i>
                         </div>
