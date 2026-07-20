@@ -128,7 +128,7 @@
             padding: 10px 0;
         }
 
-        /* BINGKAI NEON MEWAH BERGERAK */
+        /* BINGKAI NEON MEWAH (STATIS TANPA PUTARAN) */
         .premium-wrapper {
             width: 100%;
             max-width: 520px;
@@ -142,26 +142,15 @@
             overflow: hidden;
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85),
                         0 0 30px rgba(255, 204, 92, 0.05);
+            border: 1px solid rgba(255, 204, 92, 0.3);
         }
 
         .premium-wrapper::before {
             content: '';
             position: absolute;
-            top: -100%;
-            left: -100%;
-            width: 300%;
-            height: 300%;
-            background: conic-gradient(
-                from 0deg at 50% 50%,
-                transparent 0%, 
-                rgba(255, 204, 92, 0.05) 25%, 
-                var(--gold-neon) 50%, 
-                rgba(255, 204, 92, 0.05) 75%, 
-                transparent 100%
-            );
-            animation: rotateNeonBorder 2s linear infinite;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 204, 92, 0.1) 0%, transparent 50%, rgba(255, 204, 92, 0.1) 100%);
             z-index: -2;
-            transform-origin: center center;
         }
 
         .premium-wrapper::after {
@@ -171,11 +160,6 @@
             background: linear-gradient(145deg, rgba(14, 14, 19, 0.4) 0%, rgba(6, 6, 8, 0.75) 100%);
             border-radius: 22px;
             z-index: -1;
-        }
-
-        @keyframes rotateNeonBorder {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
 
         /* FOTO BANNER UTAMA */
