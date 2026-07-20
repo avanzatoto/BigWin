@@ -128,7 +128,7 @@
             padding: 10px 0;
         }
 
-        /* BINGKAI NEON MEWAH BERGERAK */
+        /* BINGKAI NEON MEWAH & SUPER CEPAT (HYPER SPEED NEON BORDER) */
         .premium-wrapper {
             width: 100%;
             max-width: 520px;
@@ -140,10 +140,11 @@
             position: relative;
             text-align: center;
             overflow: hidden;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85),
-                        0 0 30px rgba(255, 204, 92, 0.05);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9),
+                        0 0 40px rgba(255, 204, 92, 0.35); /* Cahaya glow luar lebih tajam */
         }
 
+        /* EFEK KILAT AURA BERGERAK SANGAT CEPAT DI BINGKAI */
         .premium-wrapper::before {
             content: '';
             position: absolute;
@@ -154,26 +155,30 @@
             background: conic-gradient(
                 from 0deg at 50% 50%,
                 transparent 0%, 
-                rgba(255, 204, 92, 0.05) 25%, 
+                rgba(255, 204, 92, 0.2) 15%, 
+                #ffffff 45%, 
                 var(--gold-neon) 50%, 
-                rgba(255, 204, 92, 0.05) 75%, 
+                #ffffff 55%,
+                rgba(255, 204, 92, 0.2) 85%, 
                 transparent 100%
             );
-            animation: rotateNeonBorder 2s linear infinite;
+            /* Putaran super cepat (0.75 detik) untuk efek kilat petir neon */
+            animation: rotateFastNeonBorder 0.75s linear infinite;
             z-index: -2;
             transform-origin: center center;
         }
 
+        /* PERMUKAAN DALAM AGAR EFEK HANYA TERLIHAT DIBINGKAI PINGGIRAN (BORDER 2PX) */
         .premium-wrapper::after {
             content: '';
             position: absolute;
-            inset: 2px;
-            background: linear-gradient(145deg, rgba(14, 14, 19, 0.4) 0%, rgba(6, 6, 8, 0.75) 100%);
+            inset: 2px; /* Lebar bingkai 2px */
+            background: linear-gradient(145deg, rgba(14, 14, 19, 0.92) 0%, rgba(6, 6, 8, 0.98) 100%);
             border-radius: 22px;
             z-index: -1;
         }
 
-        @keyframes rotateNeonBorder {
+        @keyframes rotateFastNeonBorder {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
@@ -202,7 +207,7 @@
             transform: scale(1.03);
         }
 
-        /* EFEK NEON HURUF */
+        /* LOGO HEADER ELEGAN */
         .logo-section h1 {
             font-family: 'Cinzel', serif;
             font-size: 38px;
@@ -210,25 +215,10 @@
             letter-spacing: 6px;
             text-transform: uppercase;
             margin-bottom: 8px;
-            background: linear-gradient(
-                90deg, 
-                #735522 0%, 
-                #ffcc5c 25%, 
-                #fff6de 50%, 
-                #ffcc5c 75%, 
-                #735522 100%
-            );
-            background-size: 200% auto;
+            background: linear-gradient(135deg, #fff6de 0%, #ffcc5c 50%, #dfb76c 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: textNeonLiquid 3s linear infinite;
-            filter: drop-shadow(0 0 8px rgba(255, 204, 92, 0.6)) 
-                    drop-shadow(0 0 25px rgba(255, 204, 92, 0.3));
-        }
-
-        @keyframes textNeonLiquid {
-            0% { background-position: 0% center; }
-            100% { background-position: -200% center; }
+            filter: drop-shadow(0 0 10px rgba(255, 204, 92, 0.7));
         }
 
         .tagline {
@@ -258,6 +248,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 10px;
+            text-shadow: 0 0 8px rgba(255, 204, 92, 0.4);
         }
 
         .promo-banner p {
@@ -269,10 +260,11 @@
 
         .promo-steps {
             text-align: left;
-            background: rgba(5, 5, 7, 0.5);
+            background: rgba(5, 5, 7, 0.6);
             padding: 12px 18px;
             border-radius: 10px;
             margin-bottom: 15px;
+            border: 1px solid rgba(255, 204, 92, 0.1);
         }
 
         .promo-steps h3 {
@@ -568,7 +560,7 @@
                 <img src="foto-tengah.jpg" alt="AVANZATOTO Official Premium Platform Image Banner">
             </div>
 
-            <!-- Teks Judul Efek Neon Mengalir Jelas -->
+            <!-- Teks Judul -->
             <div class="logo-section">
                 <h1>Avanzatoto</h1>
                 <div class="tagline">Play Smart • Win Big • Stay Premium</div>
