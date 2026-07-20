@@ -128,7 +128,7 @@
             padding: 10px 0;
         }
 
-        /* BINGKAI NEON MEWAH & SUPER CEPAT (HYPER SPEED NEON BORDER) */
+        /* BINGKAI NEON GOLD CEPAT KHUSUS PINGGIRAN (BORDER ONLY) */
         .premium-wrapper {
             width: 100%;
             max-width: 520px;
@@ -139,46 +139,41 @@
             padding: 40px 30px; 
             position: relative;
             text-align: center;
-            overflow: hidden;
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9),
-                        0 0 40px rgba(255, 204, 92, 0.35); /* Cahaya glow luar lebih tajam */
+                        0 0 30px rgba(255, 204, 92, 0.25);
         }
 
-        /* EFEK KILAT AURA BERGERAK SANGAT CEPAT DI BINGKAI */
+        /* EFEK KILAT GOLD BERGERAK HANYA DI BINGKAI LINGKUP PINGGIRAN */
         .premium-wrapper::before {
             content: '';
             position: absolute;
-            top: -100%;
-            left: -100%;
-            width: 300%;
-            height: 300%;
+            inset: -2px; /* Ditempatkan pas di bingkai luar */
+            border-radius: 26px;
             background: conic-gradient(
-                from 0deg at 50% 50%,
+                from 0deg,
                 transparent 0%, 
-                rgba(255, 204, 92, 0.2) 15%, 
-                #ffffff 45%, 
-                var(--gold-neon) 50%, 
-                #ffffff 55%,
-                rgba(255, 204, 92, 0.2) 85%, 
+                rgba(115, 85, 34, 0.3) 15%, 
+                #ffcc5c 45%, 
+                #fff6de 50%, 
+                #ffcc5c 55%,
+                rgba(115, 85, 34, 0.3) 85%, 
                 transparent 100%
             );
-            /* Putaran super cepat (0.75 detik) untuk efek kilat petir neon */
-            animation: rotateFastNeonBorder 0.75s linear infinite;
+            animation: rotateGoldNeonBorder 0.75s linear infinite;
             z-index: -2;
-            transform-origin: center center;
         }
 
-        /* PERMUKAAN DALAM AGAR EFEK HANYA TERLIHAT DIBINGKAI PINGGIRAN (BORDER 2PX) */
+        /* MENUTUPI BAGIAN TENGAH AGAR EFEK TIDAK MEMUTAR DI DALAM BINGKAI */
         .premium-wrapper::after {
             content: '';
             position: absolute;
-            inset: 2px; /* Lebar bingkai 2px */
-            background: linear-gradient(145deg, rgba(14, 14, 19, 0.92) 0%, rgba(6, 6, 8, 0.98) 100%);
-            border-radius: 22px;
+            inset: 0px;
+            background: linear-gradient(145deg, rgba(14, 14, 19, 0.95) 0%, rgba(6, 6, 8, 0.98) 100%);
+            border-radius: 24px;
             z-index: -1;
         }
 
-        @keyframes rotateFastNeonBorder {
+        @keyframes rotateGoldNeonBorder {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
@@ -520,9 +515,6 @@
             .premium-wrapper {
                 padding: 30px 20px;
                 border-radius: 20px;
-            }
-            .premium-wrapper::after {
-                border-radius: 18px;
             }
             .logo-section h1 {
                 font-size: 28px;
