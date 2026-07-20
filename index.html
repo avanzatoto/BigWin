@@ -144,7 +144,6 @@
                         0 0 30px rgba(255, 204, 92, 0.05);
         }
 
-        /* PERBAIKAN: Elemen diperbesar (300%) dan titik pusat ditarik menjauh agar rotasi gradien mengalir super halus tanpa patahan kaku di tengah */
         .premium-wrapper::before {
             content: '';
             position: absolute;
@@ -238,8 +237,57 @@
             letter-spacing: 4px;
             color: #d9b66c;
             text-transform: uppercase;
-            margin-bottom: 35px;
+            margin-bottom: 20px;
             text-shadow: 0 0 5px rgba(217, 182, 108, 0.3);
+        }
+
+        /* SECTION PROMOSI EKSKLUSIF */
+        .promo-banner {
+            background: rgba(255, 204, 92, 0.05);
+            border: 1px dashed rgba(255, 204, 92, 0.35);
+            border-radius: 14px;
+            padding: 20px 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .promo-banner h2 {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--gold-neon);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .promo-banner p {
+            font-size: 12px;
+            color: #d1d1d6;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .promo-steps {
+            text-align: left;
+            background: rgba(5, 5, 7, 0.5);
+            padding: 12px 18px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .promo-steps h3 {
+            font-size: 11px;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .promo-steps ol {
+            padding-left: 18px;
+            font-size: 11px;
+            color: #ececec;
+            line-height: 1.6;
         }
 
         /* BUTTONS (LOGIN / DAFTAR) */
@@ -489,7 +537,7 @@
                 letter-spacing: 4px;
             }
             .tagline {
-                margin-bottom: 25px;
+                margin-bottom: 20px;
             }
             .auth-grid, .links-grid, .features-grid {
                 grid-template-columns: 1fr;
@@ -526,7 +574,22 @@
                 <div class="tagline">Play Smart • Win Big • Stay Premium</div>
             </div>
 
-            <!-- Tombol Utama Akses (DIUBAH: Mengalir di tab yang sama tanpa target_blank) -->
+            <!-- TEKS PROMOSI PERSUASIF (PILIHAN 3) -->
+            <section class="promo-banner">
+                <h2>🏆 Main Pintar, Menang Besar bersama AVANZATOTO!</h2>
+                <p>Ribuan pemain telah membuktikan keunggulan layanan kelas atas kami. Dengan tampilan modern, sistem super cepat, dan jaminan keamanan terbaik, perjalanan Anda menuju keberuntungan dimulai di sini!</p>
+                
+                <div class="promo-steps">
+                    <h3>🎁 Daftar Hari Ini & Ambil Keuntungan Eksklusifnya:</h3>
+                    <ol>
+                        <li>Buka tautan resmi / alternatif kami di bawah ini.</li>
+                        <li>Buat akun dalam kurun waktu kurang dari 1 menit.</li>
+                        <li>Mainkan gamenya dan rasakan penarikan dana instan!</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Tombol Utama Akses -->
             <div class="auth-grid">
                 <a href="https://avanzalancar.com/" class="btn btn-login">
                     <i class="fa-solid fa-right-to-bracket"></i> LOGIN
@@ -574,28 +637,28 @@
                 <div class="feature-box">
                     <div class="feature-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
                     <div class="feature-text-wrap">
-                        <h3>Aman & Terpercaya</h3>
+                        <h4>Aman & Terpercaya</h4>
                         <p>Sistem enkripsi ketat</p>
                     </div>
                 </div>
                 <div class="feature-box">
                     <div class="feature-icon-wrap"><i class="fa-solid fa-bolt"></i></div>
                     <div class="feature-text-wrap">
-                        <h3>Transaksi Instan</h3>
+                        <h4>Transaksi Instan</h4>
                         <p>Proses super cepat</p>
                     </div>
                 </div>
                 <div class="feature-box">
                     <div class="feature-icon-wrap"><i class="fa-solid fa-gem"></i></div>
                     <div class="feature-text-wrap">
-                        <h3>Bonus Eksklusif</h3>
+                        <h4>Bonus Eksklusif</h4>
                         <p>Event & Reward harian</p>
                     </div>
                 </div>
                 <div class="feature-box">
                     <div class="feature-icon-wrap"><i class="fa-solid fa-headset"></i></div>
                     <div class="feature-text-wrap">
-                        <h3>Layanan VIP 24/7</h3>
+                        <h4>Layanan VIP 24/7</h4>
                         <p>Respon instan & ramah</p>
                     </div>
                 </div>
