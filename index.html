@@ -83,40 +83,50 @@
             --glass-card: rgba(10, 10, 14, 0.85);
         }
 
-        html {
-            min-height: 100vh;
-            background-color: var(--bg-dark);
-            background-image: url('background-besar.jpg');
-            background-size: 140px; 
-            background-repeat: repeat; 
-            background-position: top left;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
+        html, body {
+            min-height: 100vh;
+            background-color: var(--bg-dark);
             color: #ffffff;
             font-family: 'Montserrat', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 45px 15px;
-            position: relative;
-            background: transparent;
+        }
+
+        /* BACKGROUND FIXED LENGKAP DENGAN PROJECTION RADIAL (COMPATIBLE ANDROID, IOS, MONITOR, LAPTOP) */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('background-besar.jpg');
+            background-size: 140px; 
+            background-repeat: repeat; 
+            background-position: top left;
+            z-index: -2;
+            will-change: transform;
         }
 
         body::before {
             content: '';
             position: fixed; 
-            top: 0; left: 0; width: 100vw; height: 100vh;
+            top: 0; left: 0; width: 100%; height: 100%;
             background: radial-gradient(circle at center, rgba(6, 6, 8, 0.15) 0%, rgba(3, 3, 5, 0.8) 100%);
-            z-index: 1;
+            z-index: -1;
             pointer-events: none;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 45px 15px;
+            position: relative;
         }
 
         .main-content-container {
@@ -509,7 +519,7 @@
             border: 1px solid rgba(255, 204, 92, 0.2);
         }
 
-        /* MOBILE OPTIMIZATION */
+        /* MOBILE OPTIMIZATION (ANDROID & IPHONE) */
         @media (max-width: 480px) {
             body {
                 padding: 20px 10px;
