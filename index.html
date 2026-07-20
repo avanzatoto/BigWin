@@ -8,14 +8,65 @@
     <!-- 1. FAVICON -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <!-- 2. META SEO & LINK PREVIEW -->
-    <meta name="description" content="AVANZATOTO - Platform Premium Terpercaya. Play Smart, Win Big, Stay Premium.">
+    <!-- 2. ADVANCED & PROFESSIONAL SEO META TAGS -->
+    <meta name="description" content="AVANZATOTO - Platform game online premium terpercaya dengan pelayanan VIP 24/7, sistem keamanan enkripsi ketat, dan proses transaksi instan super cepat.">
+    <meta name="keywords" content="avanzatoto, login avanzatoto, daftar avanzatoto, link alternatif avanzatoto, platform premium, game online terpercaya">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="AVANZATOTO">
+    <link rel="canonical" href="https://website-tujuan-anda.com/">
+
+    <!-- Geo Tags / Target Lokasi -->
+    <meta name="geo.region" content="ID">
+    <meta name="geo.position" content="-6.200000;106.816666">
+    <meta name="ICBM" content="-6.200000, 106.816666">
+
+    <!-- Open Graph / Facebook / WhatsApp / Telegram (Large Image Preview) -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://website-tujuan-anda.com/">
     <meta property="og:title" content="AVANZATOTO - Play Smart, Win Big, Stay Premium">
-    <meta property="og:description" content="Platform game online premium dengan pelayanan VIP 24/7 dan transaksi instan.">
+    <meta property="og:description" content="Platform game online premium terpercaya dengan pelayanan VIP 24/7, sistem keamanan enkripsi ketat, dan proses transaksi instan super cepat.">
     <meta property="og:image" content="link-preview-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="AVANZATOTO Official Premium Banner">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:site_name" content="AVANZATOTO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AVANZATOTO - Play Smart, Win Big, Stay Premium">
+    <meta name="twitter:description" content="Platform game online premium terpercaya dengan pelayanan VIP 24/7, sistem keamanan enkripsi ketat, dan proses transaksi instan super cepat.">
+    <meta name="twitter:image" content="link-preview-image.jpg">
+
+    <!-- 3. SCHEMA ORG / JSON-LD MARKUP (Structured Data untuk Google Google Bot) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://website-tujuan-anda.com/#website",
+          "url": "https://website-tujuan-anda.com/",
+          "name": "AVANZATOTO",
+          "description": "AVANZATOTO - Play Smart, Win Big, Stay Premium",
+          "inLanguage": "id-ID"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://website-tujuan-anda.com/#organization",
+          "name": "AVANZATOTO",
+          "url": "https://website-tujuan-anda.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://website-tujuan-anda.com/link-preview-image.jpg",
+            "caption": "AVANZATOTO"
+          },
+          "sameAs": []
+        }
+      ]
+    }
+    </script>
 
     <!-- Font Google & Ikon -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -78,9 +129,7 @@
             padding: 10px 0;
         }
 
-        /* ========================================================
-           BINGKAI NEON MEWAH BERGERAK (ANGULAR BORDER GLOW)
-           ======================================================== */
+        /* BINGKAI NEON MEWAH BERGERAK (ANGULAR BORDER GLOW) */
         .premium-wrapper {
             width: 100%;
             max-width: 520px;
@@ -91,12 +140,12 @@
             padding: 40px 30px; 
             position: relative;
             text-align: center;
-            overflow: hidden; /* Memotong sudut cahaya animasi luar */
+            overflow: hidden;
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95),
                         0 0 30px rgba(255, 204, 92, 0.05);
         }
 
-        /* Efek garis laser neon berputar di balik card */
+        /* PERCEPATAN ANIMASI: Diubah dari 5s ke 2s agar laser berputar cepat & agresif */
         .premium-wrapper::before {
             content: '';
             position: absolute;
@@ -111,15 +160,14 @@
                 rgba(255, 204, 92, 0.1), 
                 transparent 60%
             );
-            animation: rotateNeonBorder 5s linear infinite;
+            animation: rotateNeonBorder 2s linear infinite;
             z-index: -2;
         }
 
-        /* Lapisan background dalam sebagai penutup center neon */
         .premium-wrapper::after {
             content: '';
             position: absolute;
-            inset: 2px; /* Tebal bingkai neon luar */
+            inset: 2px;
             background: linear-gradient(145deg, #0e0e13 0%, #060608 100%);
             border-radius: 22px;
             z-index: -1;
@@ -153,9 +201,7 @@
             transform: scale(1.03);
         }
 
-        /* ========================================================
-           EFEK NEON BERGERAK JELAS DI DALAM HURUF
-           ======================================================== */
+        /* EFEK NEON BERGERAK JELAS DI DALAM HURUF */
         .logo-section h1 {
             font-family: 'Cinzel', serif;
             font-size: 38px;
@@ -163,7 +209,6 @@
             letter-spacing: 6px;
             text-transform: uppercase;
             margin-bottom: 8px;
-            /* Kombinasi gradien kontras tinggi untuk efek neon air mengalir */
             background: linear-gradient(
                 90deg, 
                 #735522 0%, 
@@ -176,7 +221,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: textNeonLiquid 3s linear infinite;
-            /* Dobel shadow untuk kilau eksternal yang tebal & dramatis */
             filter: drop-shadow(0 0 8px rgba(255, 204, 92, 0.6)) 
                     drop-shadow(0 0 25px rgba(255, 204, 92, 0.3));
         }
@@ -196,7 +240,7 @@
             text-shadow: 0 0 5px rgba(217, 182, 108, 0.3);
         }
 
-        /* BUTTONS (LOGIN / DAFTAR) - ANTI TINDIH */
+        /* BUTTONS (LOGIN / DAFTAR) */
         .auth-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -274,7 +318,6 @@
             white-space: nowrap;
         }
 
-        /* Links Grid */
         .links-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -315,7 +358,6 @@
             box-shadow: 0 0 15px rgba(255, 204, 92, 0.15);
         }
 
-        /* LIVE SUPPORT CAPSULE */
         .livechat-container-center {
             display: flex;
             justify-content: center;
@@ -428,7 +470,7 @@
             border: 1px solid rgba(255, 204, 92, 0.2);
         }
 
-        /* MOBILE OPTIMIZATION (ANTI OVERLAPPING & MENIMPA) */
+        /* MOBILE OPTIMIZATION */
         @media (max-width: 480px) {
             body {
                 padding: 20px 10px;
@@ -447,7 +489,6 @@
             .tagline {
                 margin-bottom: 25px;
             }
-            /* Dipaksa turun ke bawah saat di HP agar menu tidak bertabrakan/tindih */
             .auth-grid, .links-grid, .features-grid {
                 grid-template-columns: 1fr;
                 gap: 10px;
@@ -469,13 +510,12 @@
 </head>
 <body>
 
-    <div class="main-content-container">
-        <!-- CONTAINER BINGKAI NEON BERGERAK -->
+    <main class="main-content-container">
         <div class="premium-wrapper">
             
             <!-- Banner Grafis -->
             <div class="foto-tengah-container">
-                <img src="foto-tengah.jpg" alt="Avanzatoto Premium Graphic">
+                <img src="foto-tengah.jpg" alt="AVANZATOTO Official Premium Platform Image Banner">
             </div>
 
             <!-- Teks Judul Efek Neon Mengalir Jelas -->
@@ -486,78 +526,78 @@
 
             <!-- Tombol Utama Akses -->
             <div class="auth-grid">
-                <a href="https://website-tujuan-anda.com/login" class="btn btn-login" target="_blank">
+                <a href="https://website-tujuan-anda.com/login" class="btn btn-login" target="_blank" rel="noopener">
                     <i class="fa-solid fa-right-to-bracket"></i> LOGIN
                 </a>
-                <a href="https://website-tujuan-anda.com/daftar" class="btn btn-daftar" target="_blank">
+                <a href="https://website-tujuan-anda.com/daftar" class="btn btn-daftar" target="_blank" rel="noopener">
                     <i class="fa-solid fa-user-plus"></i> DAFTAR
                 </a>
             </div>
 
             <!-- Panel Navigasi Link -->
-            <div class="alternatif-panel">
-                <div class="panel-label">Link Alternatif Resmi</div>
+            <section class="alternatif-panel">
+                <h2 class="panel-label">Link Alternatif Resmi</h2>
                 
                 <div class="links-grid">
-                    <a href="https://website-tujuan-anda.com/link1" class="link-item" target="_blank">
+                    <a href="https://website-tujuan-anda.com/link1" class="link-item" target="_blank" rel="noopener">
                         <i class="fa-solid fa-link"></i>
                         <span>Link Alternatif 1</span>
                     </a>
-                    <a href="https://website-tujuan-anda.com/link2" class="link-item" target="_blank">
+                    <a href="https://website-tujuan-anda.com/link2" class="link-item" target="_blank" rel="noopener">
                         <i class="fa-solid fa-link"></i>
                         <span>Link Alternatif 2</span>
                     </a>
-                    <a href="https://website-tujuan-anda.com/link3" class="link-item" target="_blank">
+                    <a href="https://website-tujuan-anda.com/link3" class="link-item" target="_blank" rel="noopener">
                         <i class="fa-solid fa-link"></i>
                         <span>Link Alternatif 3</span>
                     </a>
-                    <a href="https://website-tujuan-anda.com/link4" class="link-item" target="_blank">
+                    <a href="https://website-tujuan-anda.com/link4" class="link-item" target="_blank" rel="noopener">
                         <i class="fa-solid fa-link"></i>
                         <span>Link Alternatif 4</span>
                     </a>
                 </div>
 
                 <div class="livechat-container-center">
-                    <a href="https://website-tujuan-anda.com/livechat" class="capsule-live-support" target="_blank">
+                    <a href="https://website-tujuan-anda.com/livechat" class="capsule-live-support" target="_blank" rel="noopener">
                         <div class="capsule-icon">
                             <i class="fa-headset fa-solid"></i>
                         </div>
                         <div class="capsule-text">Live Support</div>
                     </a>
                 </div>
-            </div>
+            </section>
 
             <!-- Fitur Layanan VIP -->
-            <div class="features-grid">
+            <section class="features-grid">
                 <div class="feature-box">
                     <div class="feature-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
                     <div class="feature-text-wrap">
-                        <h4>Aman & Terpercaya</h4>
+                        <h3>Aman & Terpercaya</h3>
                         <p>Sistem enkripsi ketat</p>
                     </div>
                 </div>
                 <div class="feature-box">
                     <div class="feature-icon-wrap"><i class="fa-solid fa-bolt"></i></div>
                     <div class="feature-text-wrap">
-                        <h4>Transaksi Instan</h4>
+                        <h3>Transaksi Instan</h3>
                         <p>Proses super cepat</p>
                     </div>
                 </div>
                 <div class="feature-box">
                     <div class="feature-icon-wrap"><i class="fa-solid fa-gem"></i></div>
                     <div class="feature-text-wrap">
-                        <h4>Bonus Eksklusif</h4>
+                        <h3>Bonus Eksklusif</h3>
                         <p>Event & Reward harian</p>
                     </div>
                 </div>
                 <div class="feature-box">
                     <div class="feature-icon-wrap"><i class="fa-solid fa-headset"></i></div>
                     <div class="feature-text-wrap">
-                        <h4>Layanan VIP 24/7</h4>
+                        <h3>Layanan VIP 24/7</h3>
                         <p>Respon instan & ramah</p>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Proteksi Keamanan -->
             <div>
@@ -567,7 +607,7 @@
             </div>
             
         </div>
-    </div>
+    </main>
 
 </body>
 </html>
