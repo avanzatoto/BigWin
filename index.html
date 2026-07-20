@@ -128,7 +128,7 @@
             padding: 10px 0;
         }
 
-        /* BINGKAI NEON GOLD CEPAT KHUSUS PINGGIRAN (BORDER ONLY) */
+        /* BINGKAI LINTASAN KILAT EMAS (BORDER STROKE RUNNER - NON ROTATING) */
         .premium-wrapper {
             width: 100%;
             max-width: 520px;
@@ -140,42 +140,43 @@
             position: relative;
             text-align: center;
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9),
-                        0 0 30px rgba(255, 204, 92, 0.25);
+                        0 0 30px rgba(255, 204, 92, 0.2);
+            /* Memakai border transparan untuk tempat lintasan gradient */
+            border: 2px solid transparent;
+            background-clip: padding-box;
         }
 
-        /* EFEK KILAT GOLD BERGERAK HANYA DI BINGKAI LINGKUP PINGGIRAN */
+        /* EFEK CAHAYA EMAS BERGERAK MENYUSURI GARIS PINGGIRAN (BORDER GLOW RUNNER) */
         .premium-wrapper::before {
             content: '';
             position: absolute;
-            inset: -2px; /* Ditempatkan pas di bingkai luar */
-            border-radius: 26px;
-            background: conic-gradient(
-                from 0deg,
-                transparent 0%, 
-                rgba(115, 85, 34, 0.3) 15%, 
-                #ffcc5c 45%, 
-                #fff6de 50%, 
-                #ffcc5c 55%,
-                rgba(115, 85, 34, 0.3) 85%, 
-                transparent 100%
-            );
-            animation: rotateGoldNeonBorder 0.75s linear infinite;
-            z-index: -2;
-        }
-
-        /* MENUTUPI BAGIAN TENGAH AGAR EFEK TIDAK MEMUTAR DI DALAM BINGKAI */
-        .premium-wrapper::after {
-            content: '';
-            position: absolute;
-            inset: 0px;
-            background: linear-gradient(145deg, rgba(14, 14, 19, 0.95) 0%, rgba(6, 6, 8, 0.98) 100%);
+            inset: -2px;
             border-radius: 24px;
-            z-index: -1;
+            padding: 2px; /* Ketebalan garis bingkai */
+            background: linear-gradient(
+                90deg, 
+                rgba(255,204,92,0) 0%, 
+                #ffcc5c 25%, 
+                #fff6de 50%, 
+                #ffcc5c 75%, 
+                rgba(255,204,92,0) 100%
+            );
+            background-size: 200% 200%;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: borderLinearGlow 1s linear infinite;
+            pointer-events: none;
+            z-index: 3;
         }
 
-        @keyframes rotateGoldNeonBorder {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes borderLinearGlow {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 200% 200%;
+            }
         }
 
         /* FOTO BANNER UTAMA */
@@ -558,7 +559,7 @@
                 <div class="tagline">Play Smart • Win Big • Stay Premium</div>
             </div>
 
-            <!-- TEKS PROMOSI PERSUASIF (PILIHAN 3) -->
+            <!-- TEKS PROMOSI PERSUASIF -->
             <section class="promo-banner">
                 <h2>🏆 Main Pintar, Menang Besar bersama AVANZATOTO!</h2>
                 <p>Ribuan pemain telah membuktikan keunggulan layanan kelas atas kami. Dengan tampilan modern, sistem super cepat, dan jaminan keamanan terbaik, perjalanan Anda menuju keberuntungan dimulai di sini!</p>
