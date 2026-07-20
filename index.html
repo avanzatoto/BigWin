@@ -80,6 +80,7 @@
             --gold-dark: #735522;
             --gold-gradient: linear-gradient(135deg, #fff6de 0%, #ffcc5c 50%, #8a6f3e 100%);
             --bg-dark: #050507;
+            --glass-card: rgba(10, 10, 14, 0.45);
         }
 
         html {
@@ -114,7 +115,7 @@
             content: '';
             position: fixed; 
             top: 0; left: 0; width: 100vw; height: 100vh;
-            background: radial-gradient(circle at center, rgba(6, 6, 8, 0.15) 0%, rgba(3, 3, 5, 0.85) 100%);
+            background: radial-gradient(circle at center, rgba(6, 6, 8, 0.15) 0%, rgba(3, 3, 5, 0.8) 100%);
             z-index: 1;
             pointer-events: none;
         }
@@ -127,35 +128,54 @@
             padding: 10px 0;
         }
 
-        /* BINGKAI EMAS ELEGAN DENGAN EFEK KILAU / PULSE GOLD DILUAR */
+        /* BINGKAI NEON MEWAH BERGERAK */
         .premium-wrapper {
             width: 100%;
             max-width: 520px;
-            background: linear-gradient(145deg, rgba(16, 16, 22, 0.95) 0%, rgba(8, 8, 12, 0.98) 100%);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: var(--glass-card);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
             border-radius: 24px;
             padding: 40px 30px; 
             position: relative;
             text-align: center;
-            border: 2px solid var(--gold-neon);
-            animation: goldBorderGlow 2s infinite alternate ease-in-out;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85),
+                        0 0 30px rgba(255, 204, 92, 0.05);
         }
 
-        /* ANIMASI EFEK CAHAYA GOLD BERGERAK PADA BINGKAI PINGGIRAN */
-        @keyframes goldBorderGlow {
-            0% {
-                border-color: rgba(255, 204, 92, 0.4);
-                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9),
-                            0 0 15px rgba(255, 204, 92, 0.2),
-                            inset 0 0 15px rgba(255, 204, 92, 0.05);
-            }
-            100% {
-                border-color: rgba(255, 246, 222, 0.9);
-                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95),
-                            0 0 35px rgba(255, 204, 92, 0.6),
-                            inset 0 0 25px rgba(255, 204, 92, 0.15);
-            }
+        .premium-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: conic-gradient(
+                from 0deg at 50% 50%,
+                transparent 0%, 
+                rgba(255, 204, 92, 0.05) 25%, 
+                var(--gold-neon) 50%, 
+                rgba(255, 204, 92, 0.05) 75%, 
+                transparent 100%
+            );
+            animation: rotateNeonBorder 2s linear infinite;
+            z-index: -2;
+            transform-origin: center center;
+        }
+
+        .premium-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: linear-gradient(145deg, rgba(14, 14, 19, 0.4) 0%, rgba(6, 6, 8, 0.75) 100%);
+            border-radius: 22px;
+            z-index: -1;
+        }
+
+        @keyframes rotateNeonBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         /* FOTO BANNER UTAMA */
@@ -164,8 +184,8 @@
             margin: 0 auto 30px auto;
             border-radius: 16px; 
             overflow: hidden;
-            border: 1px solid rgba(255, 204, 92, 0.4);
-            box-shadow: 0 0 20px rgba(255, 204, 92, 0.2);
+            border: 1px solid rgba(255, 204, 92, 0.35);
+            box-shadow: 0 0 20px rgba(255, 204, 92, 0.15);
             background: #000;
         }
 
@@ -182,7 +202,7 @@
             transform: scale(1.03);
         }
 
-        /* LOGO HEADER ELEGAN */
+        /* EFEK NEON HURUF */
         .logo-section h1 {
             font-family: 'Cinzel', serif;
             font-size: 38px;
@@ -190,10 +210,25 @@
             letter-spacing: 6px;
             text-transform: uppercase;
             margin-bottom: 8px;
-            background: linear-gradient(135deg, #fff6de 0%, #ffcc5c 50%, #dfb76c 100%);
+            background: linear-gradient(
+                90deg, 
+                #735522 0%, 
+                #ffcc5c 25%, 
+                #fff6de 50%, 
+                #ffcc5c 75%, 
+                #735522 100%
+            );
+            background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 10px rgba(255, 204, 92, 0.7));
+            animation: textNeonLiquid 3s linear infinite;
+            filter: drop-shadow(0 0 8px rgba(255, 204, 92, 0.6)) 
+                    drop-shadow(0 0 25px rgba(255, 204, 92, 0.3));
+        }
+
+        @keyframes textNeonLiquid {
+            0% { background-position: 0% center; }
+            100% { background-position: -200% center; }
         }
 
         .tagline {
@@ -223,7 +258,6 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 10px;
-            text-shadow: 0 0 8px rgba(255, 204, 92, 0.4);
         }
 
         .promo-banner p {
@@ -235,11 +269,10 @@
 
         .promo-steps {
             text-align: left;
-            background: rgba(5, 5, 7, 0.6);
+            background: rgba(5, 5, 7, 0.5);
             padding: 12px 18px;
             border-radius: 10px;
             margin-bottom: 15px;
-            border: 1px solid rgba(255, 204, 92, 0.1);
         }
 
         .promo-steps h3 {
@@ -496,6 +529,9 @@
                 padding: 30px 20px;
                 border-radius: 20px;
             }
+            .premium-wrapper::after {
+                border-radius: 18px;
+            }
             .logo-section h1 {
                 font-size: 28px;
                 letter-spacing: 4px;
@@ -532,13 +568,13 @@
                 <img src="foto-tengah.jpg" alt="AVANZATOTO Official Premium Platform Image Banner">
             </div>
 
-            <!-- Teks Judul -->
+            <!-- Teks Judul Efek Neon Mengalir Jelas -->
             <div class="logo-section">
                 <h1>Avanzatoto</h1>
                 <div class="tagline">Play Smart • Win Big • Stay Premium</div>
             </div>
 
-            <!-- TEKS PROMOSI PERSUASIF -->
+            <!-- TEKS PROMOSI PERSUASIF (PILIHAN 3) -->
             <section class="promo-banner">
                 <h2>🏆 Main Pintar, Menang Besar bersama AVANZATOTO!</h2>
                 <p>Ribuan pemain telah membuktikan keunggulan layanan kelas atas kami. Dengan tampilan modern, sistem super cepat, dan jaminan keamanan terbaik, perjalanan Anda menuju keberuntungan dimulai di sini!</p>
