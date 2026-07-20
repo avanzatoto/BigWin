@@ -39,7 +39,7 @@
     <meta name="twitter:description" content="Platform game online premium terpercaya dengan pelayanan VIP 24/7, sistem keamanan enkripsi ketat, dan proses transaksi instan super cepat.">
     <meta name="twitter:image" content="link-preview-image.jpg">
 
-    <!-- 3. SCHEMA ORG / JSON-LD MARKUP (Structured Data untuk Google Google Bot) -->
+    <!-- 3. SCHEMA ORG / JSON-LD MARKUP -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -80,7 +80,8 @@
             --gold-dark: #735522;
             --gold-gradient: linear-gradient(135deg, #fff6de 0%, #ffcc5c 50%, #8a6f3e 100%);
             --bg-dark: #050507;
-            --glass-card: rgba(10, 10, 14, 0.85);
+            /* DIUBAH: Dibuat lebih transparan dari 0.85 menjadi 0.45 */
+            --glass-card: rgba(10, 10, 14, 0.45);
         }
 
         html {
@@ -111,12 +112,12 @@
             background: transparent;
         }
 
-        /* Overlay Gelap Sinematik */
+        /* Overlay Gelap Sinematik: Diturunkan opasitasnya agar background-besar lebih menyala */
         body::before {
             content: '';
             position: fixed; 
             top: 0; left: 0; width: 100vw; height: 100vh;
-            background: radial-gradient(circle at center, rgba(6, 6, 8, 0.3) 0%, rgba(3, 3, 5, 0.95) 100%);
+            background: radial-gradient(circle at center, rgba(6, 6, 8, 0.15) 0%, rgba(3, 3, 5, 0.8) 100%);
             z-index: 1;
             pointer-events: none;
         }
@@ -134,18 +135,18 @@
             width: 100%;
             max-width: 520px;
             background: var(--glass-card);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(30px); /* DIUBAH: Ditambah efek blur agar teks tetap tajam */
+            -webkit-backdrop-filter: blur(30px);
             border-radius: 24px;
             padding: 40px 30px; 
             position: relative;
             text-align: center;
             overflow: hidden;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95),
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85),
                         0 0 30px rgba(255, 204, 92, 0.05);
         }
 
-        /* PERCEPATAN ANIMASI: Diubah dari 5s ke 2s agar laser berputar cepat & agresif */
+        /* KECEPATAN TETAP TINGGI (2s) */
         .premium-wrapper::before {
             content: '';
             position: absolute;
@@ -164,11 +165,12 @@
             z-index: -2;
         }
 
+        /* DIUBAH: Lapisan background dalam diturunkan kegelapannya menjadi transparan */
         .premium-wrapper::after {
             content: '';
             position: absolute;
             inset: 2px;
-            background: linear-gradient(145deg, #0e0e13 0%, #060608 100%);
+            background: linear-gradient(145deg, rgba(14, 14, 19, 0.4) 0%, rgba(6, 6, 8, 0.75) 100%);
             border-radius: 22px;
             z-index: -1;
         }
@@ -292,7 +294,8 @@
 
         /* LINK ALTERNATIF PANEL */
         .alternatif-panel {
-            background: rgba(5, 5, 7, 0.7);
+            /* DIUBAH: Dibuat transparan melunnak dari 0.7 ke 0.4 */
+            background: rgba(5, 5, 7, 0.4);
             border: 1px solid rgba(255, 204, 92, 0.15);
             border-radius: 16px;
             padding: 30px 20px 25px 20px;
