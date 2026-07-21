@@ -280,53 +280,37 @@
             line-height: 1.6;
         }
 
-        /* BUTTONS (LOGIN / DAFTAR) */
-        .auth-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 16px 20px;
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            text-decoration: none;
-            border-radius: 12px;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            letter-spacing: 1.5px;
-        }
-
+        /* BUTTONS (LOGIN / DAFTAR / MENU ITEM) */
         .btn-login {
-            background: var(--gold-gradient);
-            color: #0b0b0d;
-            border: 1px solid #ffffff;
+            background: var(--gold-gradient) !important;
+            color: #0b0b0d !important;
+            border: 1px solid #ffffff !important;
             box-shadow: 0 5px 20px rgba(255, 204, 92, 0.3);
+            font-weight: 700 !important;
+        }
+
+        .btn-login i {
+            color: #0b0b0d !important;
         }
 
         .btn-login:hover {
-            transform: translateY(-3px);
+            transform: scale(1.02);
             box-shadow: 0 0 25px rgba(255, 204, 92, 0.6);
             filter: brightness(1.15);
         }
 
         .btn-daftar {
-            background: rgba(255, 204, 92, 0.04);
-            color: var(--gold-neon);
-            border: 1px solid rgba(255, 204, 92, 0.35);
+            background: rgba(255, 204, 92, 0.08) !important;
+            color: var(--gold-neon) !important;
+            border: 1px solid rgba(255, 204, 92, 0.4) !important;
+            font-weight: 700 !important;
         }
 
         .btn-daftar:hover {
-            border-color: #ffffff;
-            background: rgba(255, 204, 92, 0.15);
-            transform: translateY(-3px);
-            color: #fff;
+            border-color: #ffffff !important;
+            background: rgba(255, 204, 92, 0.2) !important;
+            transform: scale(1.02);
+            color: #fff !important;
             box-shadow: 0 0 20px rgba(255, 204, 92, 0.25);
         }
 
@@ -532,16 +516,12 @@
             .tagline {
                 margin-bottom: 20px;
             }
-            .auth-grid, .links-grid, .features-grid {
+            .links-grid, .features-grid {
                 grid-template-columns: 1fr;
                 gap: 10px;
             }
             .feature-box {
                 padding: 14px;
-            }
-            .btn {
-                padding: 14px 15px;
-                font-size: 13px;
             }
             .link-item {
                 padding: 14px 15px;
@@ -582,21 +562,19 @@
                 </div>
             </section>
 
-            <!-- Tombol Utama Akses -->
-            <div class="auth-grid">
-                <a href="https://avanzalancar.com/" class="btn btn-login">
-                    <i class="fa-solid fa-right-to-bracket"></i> LOGIN
-                </a>
-                <a href="https://avanzalancar.com/register" class="btn btn-daftar">
-                    <i class="fa-solid fa-user-plus"></i> DAFTAR
-                </a>
-            </div>
-
-            <!-- Panel Menu Utama (Promo & App) -->
+            <!-- Panel Menu Utama -->
             <section class="alternatif-panel">
                 <h2 class="panel-label">Menu Utama</h2>
                 
                 <div class="links-grid">
+                    <a href="https://avanzalancar.com/" class="link-item btn-login">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <span>LOGIN</span>
+                    </a>
+                    <a href="https://avanzalancar.com/register" class="link-item btn-daftar">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>DAFTAR</span>
+                    </a>
                     <a href="#" class="link-item">
                         <i class="fa-solid fa-gift"></i>
                         <span>PROMO</span>
