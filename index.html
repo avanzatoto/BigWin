@@ -285,7 +285,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
-            margin-bottom: 35px;
+            margin-bottom: 25px;
         }
 
         .btn {
@@ -330,13 +330,13 @@
             box-shadow: 0 0 20px rgba(255, 204, 92, 0.25);
         }
 
-        /* LINK ALTERNATIF PANEL */
+        /* PANEL STYLE UMUM */
         .alternatif-panel {
             background: rgba(5, 5, 7, 0.4);
             border: 1px solid rgba(255, 204, 92, 0.15);
             border-radius: 16px;
             padding: 30px 20px 25px 20px;
-            margin-bottom: 35px;
+            margin-bottom: 25px;
             position: relative;
         }
 
@@ -362,6 +362,9 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
+        }
+
+        .links-grid.with-margin {
             margin-bottom: 25px;
         }
 
@@ -589,19 +592,11 @@
                 </a>
             </div>
 
-            <!-- Panel Navigasi Link -->
+            <!-- Panel Menu Utama (Promo & App) -->
             <section class="alternatif-panel">
-                <h2 class="panel-label">Link Alternatif Resmi</h2>
+                <h2 class="panel-label">Menu Utama</h2>
                 
                 <div class="links-grid">
-                    <a href="https://avanzabiru.com/" class="link-item">
-                        <i class="fa-solid fa-link"></i>
-                        <span>Link Alternatif 1</span>
-                    </a>
-                    <a href="https://avanzatoto19.com/" class="link-item">
-                        <i class="fa-solid fa-link"></i>
-                        <span>Link Alternatif 2</span>
-                    </a>
                     <a href="#" class="link-item">
                         <i class="fa-solid fa-gift"></i>
                         <span>PROMO</span>
@@ -609,6 +604,22 @@
                     <a href="#" class="link-item">
                         <i class="fa-solid fa-mobile-screen-button"></i>
                         <span>DOWNLOAD APP</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Panel Navigasi Link Alternatif -->
+            <section class="alternatif-panel">
+                <h2 class="panel-label">Link Alternatif Resmi</h2>
+                
+                <div class="links-grid with-margin">
+                    <a href="https://avanzabiru.com/" class="link-item">
+                        <i class="fa-solid fa-link"></i>
+                        <span>Link Alternatif 1</span>
+                    </a>
+                    <a href="https://avanzatoto19.com/" class="link-item">
+                        <i class="fa-solid fa-link"></i>
+                        <span>Link Alternatif 2</span>
                     </a>
                 </div>
 
